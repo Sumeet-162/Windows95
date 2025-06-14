@@ -5,6 +5,36 @@
 const navbar = document.querySelector('.navbar');
 const windows = document.querySelectorAll('.win98-window');
 const resumeButton = document.querySelector('.resume-button');
+const startButton = document.getElementById('startButton');
+const startMenu = document.getElementById('startMenu');
+
+// Start Menu Behavior
+if (startButton && startMenu) {
+  let isStartMenuOpen = false;
+
+  // Toggle Start Menu
+  startButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    isStartMenuOpen = !isStartMenuOpen;
+    startMenu.classList.toggle('active', isStartMenuOpen);
+  });
+
+  // Close Start Menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (isStartMenuOpen && !startMenu.contains(e.target) && e.target !== startButton) {
+      isStartMenuOpen = false;
+      startMenu.classList.remove('active');
+    }
+  });
+
+  // Close Start Menu on scroll
+  window.addEventListener('scroll', () => {
+    if (isStartMenuOpen) {
+      isStartMenuOpen = false;
+      startMenu.classList.remove('active');
+    }
+  });
+}
 
 // Make Windows Draggable
 class DraggableWindow {

@@ -9,7 +9,7 @@
 <body>
   <!-- XP Taskbar/Navbar -->
   <nav class="xp-navbar">
-    <button class="xp-start">
+    <button class="xp-start" id="startButton">
       <img src="assets/icons/start.svg" class="xp-icon" alt="Start">
       Start
     </button>
@@ -31,6 +31,26 @@
       Connect
     </a>
   </nav>
+
+  <!-- Start Menu -->
+  <div class="xp-start-menu" id="startMenu">
+    <a href="index.html" class="xp-start-menu-item">
+      <img src="assets/icons/home.svg" alt="Home">
+      Home
+    </a>
+    <a href="projects.html" class="xp-start-menu-item">
+      <img src="assets/icons/projects.svg" alt="Projects">
+      Projects
+    </a>
+    <a href="certificate.html" class="xp-start-menu-item">
+      <img src="assets/icons/certificate.svg" alt="Certifications">
+      Certifications
+    </a>
+    <a href="connect.html" class="xp-start-menu-item">
+      <img src="assets/icons/connect.svg" alt="Connect">
+      Connect
+    </a>
+  </div>
 
   <!-- Projects Window -->
   <section class="xp-window" style="margin-top:64px;">
@@ -110,5 +130,8 @@
   }
   .xp-btn { position: relative; }
   </style>
+  
+  <!-- Include main.js -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html> 

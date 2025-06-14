@@ -85,6 +85,59 @@ body {
   margin: 0 6px;
 }
 
+/* Start Menu */
+.xp-start-menu {
+  position: fixed;
+  bottom: 36px;
+  left: 0;
+  width: 200px;
+  background: var(--win95-gray);
+  border: 2px solid var(--win95-shadow);
+  box-shadow: 2px 2px 0 var(--win95-shadow);
+  display: none;
+  z-index: 999;
+  padding: 4px;
+}
+
+.xp-start-menu.active {
+  display: block;
+  animation: slideUp 0.2s ease-out;
+}
+
+.xp-start-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  cursor: pointer;
+  color: #222;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+}
+
+.xp-start-menu-item:hover {
+  background: var(--win95-blue);
+  color: white;
+}
+
+.xp-start-menu-item img {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* Window Container */
 .xp-window {
   background: var(--win95-gray);
@@ -182,44 +235,49 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-  body{
-    margin-top: 250px;
-  }
+@media (max-width: 768px) {
   .xp-navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 0.5em 0.5em;
-    min-width: 0;
+    height: 36px;
+    padding: 0 8px;
   }
-  .xp-navbar .xp-nav-link, .xp-navbar .xp-start {
-    width: 100%;
-    margin: 0 0 6px 0;
-    justify-content: flex-start;
+
+  .xp-navbar .xp-nav-link {
+    display: none;
   }
+
+  .xp-navbar .xp-start {
+    margin-right: 0;
+  }
+
   .xp-navbar .xp-nav-divider {
     display: none;
   }
+
+  .xp-start-menu {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  body {
+    margin-top: 36px;
+  }
+
+  /* Add margins for mobile screens */
   .xp-window {
-    margin-top: 70px !important;
-    margin-bottom: 1.2em !important;
-    margin-left: 0.5em !important;
-    margin-right: 0.5em !important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
     width: auto !important;
-    min-width: 0 !important;
-    max-width: 100vw !important;
+    max-width: calc(100% - 32px) !important;
     box-sizing: border-box;
   }
+
   .xp-content {
-    padding: 1em 0.5em 1em 0.5em !important;
-    word-break: break-word;
+    padding: 1em 1em !important;
   }
+
   .xp-card {
-    margin-bottom: 1em !important;
-    padding: 1em 0.5em 1em 0.5em !important;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    word-break: break-word;
+    margin: 1em 0 !important;
+    padding: 1em !important;
   }
 }
 
