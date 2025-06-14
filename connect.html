@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect | Sumeet K</title>
+  <link rel="stylesheet" href="assets/css/xp97.css">
+</head>
+<body>
+  <!-- XP Taskbar/Navbar -->
+  <nav class="xp-navbar">
+    <button class="xp-start">
+      <img src="assets/icons/start.svg" class="xp-icon" alt="Start">
+      Start
+    </button>
+    <div class="xp-nav-divider"></div>
+    <a href="index.html" class="xp-nav-link">
+      <img src="assets/icons/home.svg" class="xp-icon" alt="Home">
+      Home
+    </a>
+    <a href="projects.html" class="xp-nav-link">
+      <img src="assets/icons/projects.svg" class="xp-icon" alt="Projects">
+      Projects
+    </a>
+    <a href="certificate.html" class="xp-nav-link">
+      <img src="assets/icons/certificate.svg" class="xp-icon" alt="Certifications">
+      Certifications
+    </a>
+    <a href="connect.html" class="xp-nav-link">
+      <img src="assets/icons/connect.svg" class="xp-icon" alt="Connect">
+      Connect
+    </a>
+  </nav>
+
+  <!-- Connect Window -->
+  <section class="xp-window" style="margin-top:64px;">
+    <div class="xp-titlebar">
+      <img src="assets/icons/connect.svg" class="xp-icon" alt="Connect">
+      Connect
+    </div>
+    <div class="xp-content" style="line-height:1.8; font-size:0.8rem;">
+      <div class="xp-card" style="margin-bottom:1.5em;">
+        <h2 style="font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif; font-size: 1rem;">Contact Me</h2>
+        <form id="contactForm">
+          <input type="text" class="xp-input" placeholder="Your Name" required style="font-size:0.8rem;">
+          <br>
+          <input type="email" class="xp-input" placeholder="Your Email" required style="font-size:0.8rem;">
+          <br>
+          <textarea class="xp-input" placeholder="Your Message" rows="5" required style="font-size:0.8rem;"></textarea>
+          <br>
+          <button type="submit" class="xp-btn" title="Send your message">
+            <img src="assets/icons/send.svg" class="xp-icon" alt="Send">
+            Send Message
+          </button>
+        </form>
+      </div>
+      <div class="xp-card">
+        <h2 style="font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif; font-size: 1rem;">Connect on Social Media</h2>
+        <button class="xp-btn" onclick="window.open('https://github.com/Sumeet-162', '_blank')">
+          <img src="assets/icons/github.svg" class="xp-icon" alt="GitHub">
+          GitHub
+        </button>
+        <button class="xp-btn" onclick="window.open('https://www.linkedin.com/in/sumeet-k-573913238/', '_blank')">
+          <img src="assets/icons/linkedin.svg" class="xp-icon" alt="LinkedIn">
+          LinkedIn
+        </button>
+        <button class="xp-btn" onclick="window.open('https://twitter.com/SumeetK162', '_blank')">
+          <img src="assets/icons/twitter.svg" class="xp-icon" alt="Twitter">
+          Twitter
+        </button>
+        <button class="xp-btn" onclick="window.open('mailto:sumeetk162@gmail.com', '_blank')">
+          <img src="assets/icons/email.svg" class="xp-icon" alt="Email">
+          Email
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subtle retro feature: pixelated hover effect for social/contact buttons -->
+  <style>
+  .xp-btn:hover {
+    filter: contrast(1.2) brightness(1.1) drop-shadow(1px 1px 0 #808080);
+  }
+  .xp-btn[title]:hover:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: #ffffe1;
+    color: #222;
+    border: 1px solid #808080;
+    font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 #bfcbe7;
+    pointer-events: none;
+  }
+  .xp-btn { position: relative; }
+  </style>
+
+  <script>
+  // Retro confirmation dialog for contact form
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Play retro sound (optional)
+    const audio = new Audio('https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae7c2.mp3');
+    audio.volume = 0.2;
+    audio.play();
+    // Create dialog
+    const dialog = document.createElement('div');
+    dialog.style.position = 'fixed';
+    dialog.style.left = '0';
+    dialog.style.top = '0';
+    dialog.style.width = '100vw';
+    dialog.style.height = '100vh';
+    dialog.style.background = 'rgba(0,0,0,0.12)';
+    dialog.style.display = 'flex';
+    dialog.style.alignItems = 'center';
+    dialog.style.justifyContent = 'center';
+    dialog.style.zIndex = '9999';
+    dialog.innerHTML = `
+      <div style="background:#c0c0c0;border:2px solid #808080;box-shadow:8px 8px 0 #808080;min-width:320px;max-width:90vw;min-height:120px;font-family:'Press Start 2P',Tahoma,sans-serif;display:flex;flex-direction:column;image-rendering:pixelated;">
+        <div style="background:#000080;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 8px;height:28px;font-size:0.9rem;font-family:'Press Start 2P',Tahoma,sans-serif;border-bottom:2px solid #808080;user-select:none;">
+          <span><img src='assets/icons/email.svg' style='width:16px;height:16px;vertical-align:middle;margin-right:4px;image-rendering:pixelated;'> <u>M</u>essage Sent</span>
+          <button style="background:#c0c0c0;border:2px outset #fff;width:28px;height:22px;color:#222;font-family:'Press Start 2P',Tahoma,sans-serif;font-size:1.1rem;cursor:pointer;line-height:1;padding:0;margin-left:8px;">&#10005;</button>
+        </div>
+        <div style="flex:1;padding:18px 18px 12px 18px;font-size:0.8rem;background:#fff;overflow-x:auto;text-align:left;line-height:1.6;">
+          <p style="margin:0;white-space:pre-wrap;word-break:break-word;">Your message has been sent successfully!\nThank you for reaching out.</p>
+          <div style="margin-top:1.2em;text-align:right;">
+            <button class="xp-btn" style="font-size:1rem;min-width:80px;">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(dialog);
+    // Close dialog on X or OK
+    dialog.querySelector('button').onclick = () => dialog.remove();
+    dialog.querySelectorAll('button')[1].onclick = () => dialog.remove();
+    // Reset form
+    contactForm.reset();
+  });
+  </script>
+
+  <style>
+  /* Animated button press */
+  .xp-btn:active {
+    transform: translateY(1px) scale(0.98);
+    filter: brightness(0.95) contrast(1.1);
+  }
+  /* Pixelated blue focus outline */
+  .xp-btn:focus, .xp-input:focus {
+    outline: 2px solid #000080 !important;
+    outline-offset: 0px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000080;
+  }
+  </style>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* XP/97 Theme CSS */
+
+/* Add Windows 95 pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+:root {
+  --xp-blue: #3a6ea5;
+  --xp-light-blue: #eaf3fb;
+  --xp-titlebar: #245edb;
+  --xp-titlebar-gradient: linear-gradient(90deg, #245edb 0%, #3a6ea5 100%);
+  --xp-titlebar-text: #fff;
+  --xp-gray: #ececec;
+  --xp-dark-gray: #b5b5b5;
+  --xp-border: #7b7b7b;
+  --xp-shadow: #bfcbe7;
+  --xp-green: #4ec143;
+  --xp-btn-face: #f3f3f3;
+  --xp-btn-highlight: #fff;
+  --xp-btn-shadow: #b5b5b5;
+  --xp-btn-pressed: #dbe6f6;
+  --font-ui: 'Press Start 2P', 'Perfect DOS VGA 437', Tahoma, Segoe UI, Verdana, Arial, sans-serif;
+  --win95-blue: #000080;
+  --win95-gray: #c0c0c0;
+  --win95-light: #fcfcfc;
+  --win95-shadow: #808080;
+  --win95-dark: #808080;
+  --win95-highlight: #fff;
+  --win95-btn-face: #dfdfdf;
+  --win95-btn-shadow: #808080;
+  --win95-btn-highlight: #fff;
+  --win95-btn-pressed: #b5b5b5;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--win95-light) url('https://raw.githubusercontent.com/Sumeet-162/website-images/refs/heads/main/most-famous-windows-95-desktop-abdvzrjfnw81471k.jpg') center center / cover no-repeat fixed;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  image-rendering: pixelated;
+  cursor: url('assets/icons/cursor.svg'), auto;
+}
+
+/* Taskbar/Navbar */
+.xp-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: var(--win95-gray);
+  border-bottom: 2px solid var(--win95-shadow);
+  box-shadow: 0 2px 0 var(--win95-shadow);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 8px;
+}
+.xp-navbar .xp-start, .xp-navbar .xp-nav-link {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  border-radius: 0;
+  border: 2px outset var(--win95-btn-highlight);
+  background: var(--win95-btn-face);
+  color: #222;
+  box-shadow: 1px 1px 0 var(--win95-highlight);
+  padding: 4px 12px;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.1s, box-shadow 0.1s, border 0.1s;
+  image-rendering: pixelated;
+}
+.xp-navbar .xp-nav-link:hover, .xp-navbar .xp-start:hover {
+  background: var(--win95-btn-pressed);
+  border: 2px inset var(--win95-shadow);
+}
+.xp-navbar .xp-nav-divider {
+  width: 2px;
+  height: 22px;
+  background: var(--win95-shadow);
+  margin: 0 6px;
+}
+
+/* Window Container */
+.xp-window {
+  background: var(--win95-gray);
+  border: 2px solid var(--win95-shadow);
+  box-shadow: 2px 2px 0 var(--win95-shadow);
+  border-radius: 0;
+  margin: 80px auto 24px auto;
+  max-width: 900px;
+  min-width: 320px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  image-rendering: pixelated;
+}
+.xp-titlebar {
+  background: var(--win95-blue);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-bottom: 2px solid var(--win95-shadow);
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+.xp-titlebar u, .xp-navbar .xp-nav-link u, .xp-navbar .xp-start u, .xp-btn u {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.xp-content {
+  padding: 2em 2em 1.5em 2em;
+  flex: 1;
+}
+
+/* Dialog/Card */
+.xp-card {
+  background: var(--win95-btn-face);
+  border: 2px solid var(--win95-shadow);
+  box-shadow: 1px 1px 0 var(--win95-highlight);
+  border-radius: 0;
+  margin: 1.5em 0;
+  padding: 1.5em 1.5em 1em 1.5em;
+  image-rendering: pixelated;
+}
+
+/* Buttons */
+.xp-btn, .xp-window button, .xp-window input[type="submit"], .xp-window input[type="button"] {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  border-radius: 0;
+  border: 2px outset var(--win95-btn-highlight);
+  background: var(--win95-btn-face);
+  color: #222;
+  box-shadow: 1px 1px 0 var(--win95-highlight);
+  padding: 4px 14px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: background 0.1s, box-shadow 0.1s, border 0.1s;
+  image-rendering: pixelated;
+}
+.xp-btn:active, .xp-window button:active {
+  background: var(--win95-btn-pressed);
+  border: 2px inset var(--win95-shadow);
+  box-shadow: inset 1px 1px 0 var(--win95-shadow);
+}
+.xp-btn:focus, .xp-window button:focus {
+  outline: 2px dotted var(--win95-blue);
+}
+
+/* Inputs */
+.xp-input, .xp-window input[type="text"], .xp-window input[type="email"], .xp-window textarea {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  border-radius: 0;
+  border: 2px inset var(--win95-shadow);
+  background: #fff;
+  color: #222;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+/* XP Icon Style */
+.xp-icon {
+  width: 20px;
+  height: 20px;
+  image-rendering: pixelated;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  body{
+    margin-top: 250px;
+  }
+  .xp-navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5em 0.5em;
+    min-width: 0;
+  }
+  .xp-navbar .xp-nav-link, .xp-navbar .xp-start {
+    width: 100%;
+    margin: 0 0 6px 0;
+    justify-content: flex-start;
+  }
+  .xp-navbar .xp-nav-divider {
+    display: none;
+  }
+  .xp-window {
+    margin-top: 70px !important;
+    margin-bottom: 1.2em !important;
+    margin-left: 0.5em !important;
+    margin-right: 0.5em !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+  .xp-content {
+    padding: 1em 0.5em 1em 0.5em !important;
+    word-break: break-word;
+  }
+  .xp-card {
+    margin-bottom: 1em !important;
+    padding: 1em 0.5em 1em 0.5em !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+}
+
+/* Underline first letter for all major UI elements */
+.xp-titlebar span::first-letter, .xp-navbar .xp-nav-link span::first-letter, .xp-btn span::first-letter {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* Pixelated scrollbars */
+::-webkit-scrollbar {
+  width: 16px;
+  background: var(--win95-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--win95-shadow);
+  border: 2px solid var(--win95-highlight);
+  box-shadow: inset 1px 1px 0 var(--win95-btn-face);
+} 

@@ -1,0 +1,710 @@
+/* Modern Portfolio with Windows 98/XP Aesthetic
+   =========================================== */
+
+/* Base Styles & Variables */
+:root {
+  /* Windows 98/XP Colors */
+  --win98-blue: #000080;
+  --win98-gray: #C0C0C0;
+  --win98-light: #DFDFDF;
+  --win98-dark: #808080;
+  --win98-border: #000000;
+  --win98-highlight: #000080;
+  --win98-text: #000000;
+  --win98-titlebar: linear-gradient(90deg, #000080, #1084d0);
+  --win98-button-highlight: #ffffff;
+  --win98-button-shadow: #808080;
+  --win98-button-pressed: #c0c0c0;
+  
+  /* Typography */
+  --font-primary: Tahoma, Verdana, Segoe UI, Arial, sans-serif;
+  --font-mono: 'MS Sans Serif', 'Tahoma', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Windows-specific */
+  --win-border: 2px solid var(--win98-border);
+  --win-inner-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  --win-outer-shadow: -1px -1px #0a0a0a, 1px 1px #dfdfdf, -2px -2px grey, 2px 2px #fff;
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: var(--win98-text);
+  background: var(--win98-gray);
+  min-height: 100vh;
+}
+
+/* Windows 98/XP Window Styles */
+.win98-window {
+  background: var(--win98-gray);
+  border: var(--win-border);
+  box-shadow: var(--win-outer-shadow);
+  margin: var(--spacing-md);
+  position: relative;
+}
+
+.win98-titlebar {
+  background: var(--win98-titlebar);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: move;
+  user-select: none;
+  font-family: var(--font-primary);
+  font-weight: bold;
+}
+
+.win98-content {
+  background: var(--win98-light);
+  padding: var(--spacing-md);
+  border: 1px solid var(--win98-border);
+  margin: 2px;
+  font-family: var(--font-primary);
+}
+
+/* Navigation */
+.navbar {
+  border-radius: 0;
+  background: #e3e9f6;
+  border: 2px solid #7a96df;
+  box-shadow: 0 2px 0 #bfcbe7;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: 2rem;
+}
+
+.nav-link, .nav-brand button {
+  border-radius: 0 !important;
+  margin-right: 0.5rem;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  padding: 0.35rem 1.1rem;
+  border: 2px solid #bfcbe7;
+  background: linear-gradient(180deg, #f6f8fa 80%, #dbe6f6 100%);
+  box-shadow: 1px 1px 0 #fff, 2px 2px 0 #bfcbe7;
+  color: #1a237e;
+  transition: background 0.15s, box-shadow 0.15s, border 0.15s;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link:hover, .nav-brand button:hover {
+  background: linear-gradient(180deg, #dbe6f6 80%, #bfcbe7 100%);
+  border: 2px solid #7a96df;
+  color: #0d133d;
+}
+
+/* Windows 98/XP Button Styles */
+.win98-button, button, input[type="button"], input[type="submit"], input[type="reset"] {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  border-radius: 0 !important;
+  border: 2px solid #bfcbe7;
+  background: linear-gradient(180deg, #f6f8fa 80%, #dbe6f6 100%);
+  box-shadow: 1px 1px 0 #fff, 2px 2px 0 #bfcbe7;
+  color: #1a237e;
+  padding: 0.35rem 1.1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+  transition: background 0.15s, box-shadow 0.15s, border 0.15s;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.win98-button:active, button:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active {
+  background: linear-gradient(180deg, #dbe6f6 80%, #f6f8fa 100%);
+  box-shadow: inset 1px 1px 0 #bfcbe7, inset 2px 2px 0 #fff;
+  border: 2px solid #7a96df;
+  color: #0d133d;
+}
+
+.win98-button:focus, button:focus, input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus {
+  outline: 2px dotted #7a96df;
+}
+
+/* Form Elements */
+.win98-input {
+  background: white;
+  border: 2px inset var(--win98-button-shadow);
+  padding: 4px 8px;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--win98-text);
+  width: 100%;
+}
+
+.win98-input:focus {
+  outline: 2px solid var(--win98-highlight);
+  border-color: var(--win98-highlight);
+}
+
+/* Windows 98/XP Menu */
+.win98-menu {
+  background: var(--win98-gray);
+  border: var(--win-border);
+  box-shadow: var(--win-outer-shadow);
+  padding: 2px;
+  position: absolute;
+  min-width: 200px;
+}
+
+.win98-menu-item {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  color: var(--win98-text);
+}
+
+.win98-menu-item:hover {
+  background: var(--win98-highlight);
+  color: white;
+}
+
+/* Dialog */
+.win98-dialog {
+  background: var(--win98-gray);
+  border: var(--win-border);
+  box-shadow: var(--win-outer-shadow);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  z-index: 1100;
+}
+
+/* Modern Material Design Components */
+.material-card {
+  background: #dfdfdf;
+  border: 2px solid #808080;
+  box-shadow: 4px 4px 0 #222, 8px 8px 0 #808080;
+  border-radius: 0;
+  padding: var(--spacing-lg);
+  font-family: 'Inter', Arial, sans-serif;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 0;
+}
+.material-card h3 {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.material-card:hover {
+  box-shadow: 4px 4px 0 #174EA6, 8px 8px 0 #808080;
+  background: #e0e0e0;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    padding: var(--spacing-sm);
+  }
+  
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+
+/* --- Pixel Art Cursor --- */
+body, html {
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto;
+}
+
+/* --- Pixel Icon Classes --- */
+.pixel-icon {
+  width: 20px;
+  height: 20px;
+  image-rendering: pixelated;
+  vertical-align: middle;
+  margin-right: 0.4em;
+}
+
+/* --- Retro Dialog --- */
+.win98-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  background: #e0e0e0;
+  border: 2px solid #808080;
+  box-shadow: 4px 4px 0 #222, 8px 8px 0 #808080;
+  z-index: 2000;
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  animation: fade-in 0.2s;
+}
+
+.win98-dialog .win98-titlebar {
+  background: #c0c0c0;
+  border-bottom: 2px solid #808080;
+  padding: 6px 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.win98-dialog .win98-content {
+  padding: 18px 18px 12px 18px;
+  font-size: 0.95rem;
+}
+
+.win98-dialog .dialog-buttons {
+  text-align: right;
+  margin-top: 12px;
+}
+
+/* --- Window Shadows & Effects --- */
+.win98-window {
+  box-shadow: 4px 4px 0 #222, 8px 8px 0 #808080;
+  border: 2px solid #808080;
+  background: #f8f8f8;
+}
+
+/* --- Window Titlebar --- */
+.win98-titlebar {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  background: #c0c0c0;
+  color: #222;
+  border-bottom: 2px solid #808080;
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Misc. --- */
+input.win98-input, textarea.win98-input {
+  font-family: 'VT323', 'Press Start 2P', monospace;
+  font-size: 1rem;
+  background: #fff;
+  border: 2px inset #808080;
+  padding: 6px 10px;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+input.win98-input:focus, textarea.win98-input:focus {
+  outline: none;
+  border: 2px inset #174EA6;
+  background: #e0e0e0;
+}
+
+/* --- Animations --- */
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Add more as needed for retro/pixel look --- */
+
+/* Modern Portfolio with Windows 98/XP Aesthetic
+   =========================================== */
+
+/* Base Styles & Variables */
+:root {
+  /* Modern Color Palette */
+  --primary: #4285F4;
+  --secondary: #34A853;
+  --accent: #FBBC04;
+  --error: #EA4335;
+  --background: #FFFFFF;
+  --surface: #F8F9FA;
+  --text-primary: #202124;
+  --text-secondary: #5F6368;
+  
+  /* Windows 98/XP Colors */
+  --win98-blue: #000080;
+  --win98-gray: #C0C0C0;
+  --win98-light: #DFDFDF;
+  --win98-dark: #808080;
+  --win98-border: #000000;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Press Start 2P', monospace;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Windows-specific */
+  --win-border: 2px solid var(--win98-border);
+  --win-inner-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  --win-outer-shadow: -1px -1px #0a0a0a, 1px 1px #dfdfdf, -2px -2px grey, 2px 2px #fff;
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--background);
+  min-height: 100vh;
+}
+
+/* Windows 98/XP Window Styles */
+.win98-window {
+  background: var(--win98-gray);
+  border: var(--win-border);
+  box-shadow: var(--win-outer-shadow);
+  margin: var(--spacing-md);
+  position: relative;
+}
+
+.win98-titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: move;
+  user-select: none;
+}
+
+.win98-titlebar-icon {
+  margin-right: var(--spacing-sm);
+}
+
+.win98-content {
+  background: var(--win98-light);
+  padding: var(--spacing-md);
+  border: 1px solid var(--win98-border);
+  margin: 2px;
+}
+
+/* Modern Material Design Components */
+.material-card {
+  background: #dfdfdf;
+  border: 2px solid #808080;
+  box-shadow: 4px 4px 0 #222, 8px 8px 0 #808080;
+  border-radius: 0;
+  padding: var(--spacing-lg);
+  font-family: 'Inter', Arial, sans-serif;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 0;
+}
+.material-card h3 {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.material-card:hover {
+  box-shadow: 4px 4px 0 #174EA6, 8px 8px 0 #808080;
+  background: #e0e0e0;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background: rgba(66, 133, 244, 0.1);
+}
+
+/* Windows 98/XP Button Styles */
+.win98-button {
+  background: var(--win98-gray);
+  border: var(--win-border);
+  box-shadow: var(--win-outer-shadow);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  font-family: var(--font-primary);
+  position: relative;
+  transition: all 0.1s;
+}
+
+.win98-button:active {
+  box-shadow: var(--win-inner-shadow);
+  transform: translateY(1px);
+}
+
+/* Resume Download Button */
+.resume-button {
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  font-size: 0.9rem;
+  background: #e0e0e0;
+  border: 2px outset #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  color: #222;
+  padding: 8px 18px;
+  margin: 2px 0;
+  box-shadow: 1px 1px 0 #fff, 2px 2px 0 #808080;
+  cursor: pointer;
+  transition: background 0.1s, border 0.1s, color 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.resume-button:hover {
+  background: #d0d0d0;
+  border: 2px inset #808080;
+  color: #174EA6;
+}
+
+.resume-button:active {
+  background: #b0b0b0;
+  border: 2px inset #222;
+  color: #A50E0E;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    padding: var(--spacing-sm);
+  }
+  
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Windows 98/XP Menu Styles */
+.win98-menu {
+  background: var(--win98-gray);
+  border: var(--win-border);
+  box-shadow: var(--win-outer-shadow);
+  padding: var(--spacing-xs);
+}
+
+.win98-menu-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.win98-menu-item:hover {
+  background: var(--win98-blue);
+  color: white;
+}
+
+/* Form Elements */
+.win98-input {
+  background: white;
+  border: var(--win-border);
+  padding: var(--spacing-sm);
+  font-family: var(--font-primary);
+}
+
+.win98-input:focus {
+  outline: 2px solid var(--win98-blue);
+}
+
+/* Loading Animation */
+.win98-loading {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--win98-gray);
+  border-top-color: var(--win98-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+
+/* --- HERO SECTION SPACING --- */
+.hero, .hero-section, .main-hero {
+  margin-top: 90px !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.5rem;
+  }
+  .nav-links {
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+  .hero, .hero-section, .main-hero {
+    margin-top: 110px !important;
+  }
+}
+
+/* Remove border-radius from all windows and toolbars */
+.win98-window, .win98-titlebar, .win98-toolbar, .win98-content, .win98-statusbar, .footer, .material-card {
+  border-radius: 0 !important;
+} 

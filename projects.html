@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Sumeet K</title>
+  <link rel="stylesheet" href="assets/css/xp97.css">
+</head>
+<body>
+  <!-- XP Taskbar/Navbar -->
+  <nav class="xp-navbar">
+    <button class="xp-start">
+      <img src="assets/icons/start.svg" class="xp-icon" alt="Start">
+      Start
+    </button>
+    <div class="xp-nav-divider"></div>
+    <a href="index.html" class="xp-nav-link">
+      <img src="assets/icons/home.svg" class="xp-icon" alt="Home">
+      Home
+    </a>
+    <a href="projects.html" class="xp-nav-link">
+      <img src="assets/icons/projects.svg" class="xp-icon" alt="Projects">
+      Projects
+    </a>
+    <a href="certificate.html" class="xp-nav-link">
+      <img src="assets/icons/certificate.svg" class="xp-icon" alt="Certifications">
+      Certifications
+    </a>
+    <a href="connect.html" class="xp-nav-link">
+      <img src="assets/icons/connect.svg" class="xp-icon" alt="Connect">
+      Connect
+    </a>
+  </nav>
+
+  <!-- Projects Window -->
+  <section class="xp-window" style="margin-top:64px;">
+    <div class="xp-titlebar">
+      <img src="assets/icons/projects.svg" class="xp-icon" alt="Projects">
+      <span><u>P</u>rojects</span>
+    </div>
+    <div class="xp-content">
+      <div class="xp-card">
+        <h2 style="font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif; font-size: 1rem;">React Employee Management</h2>
+        <p style="font-size:0.8rem;line-height:1.7;">A feature-rich web app for managing employee data, built with <b>React</b>, <b>JavaScript</b>, and <b>local storage</b>. Features include adding, editing, and viewing employee records with a clean, responsive UI.</p>
+        <div style="margin-bottom:0.7em;">
+          <span style="font-size:0.7rem;">Tech: React, JavaScript, HTML, CSS, Local Storage</span>
+        </div>
+        <button class="xp-btn" onclick="window.open('https://github.com/Sumeet-162/employee-management', '_blank')" title="View Source Code">
+          <img src="assets/icons/view.svg" class="xp-icon" alt="View">
+          View Source Code
+        </button>
+        <button class="xp-btn" onclick="window.open('https://sumeet-162.github.io/employee-management/', '_blank')" title="Live Demo">
+          <img src="assets/icons/view.svg" class="xp-icon" alt="Live">
+          Live Demo
+        </button>
+      </div>
+      <div class="xp-card">
+        <h2 style="font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif; font-size: 1rem;">Generative AI App</h2>
+        <p style="font-size:0.8rem;line-height:1.7;">An AI-powered application using <b>Google's Gemini API</b> for content generation. Built with <b>React</b> and <b>Vite</b>, featuring a modern UI and real-time AI responses.</p>
+        <div style="margin-bottom:0.7em;">
+          <span style="font-size:0.7rem;">Tech: React, Vite, Gemini API, JavaScript, HTML, CSS</span>
+        </div>
+        <button class="xp-btn" onclick="window.open('https://github.com/Sumeet-162/generative-ai-app', '_blank')" title="View Source Code">
+          <img src="assets/icons/view.svg" class="xp-icon" alt="View">
+          View Source Code
+        </button>
+        <button class="xp-btn" onclick="window.open('https://sumeet-162.github.io/generative-ai-app/', '_blank')" title="Live Demo">
+          <img src="assets/icons/view.svg" class="xp-icon" alt="Live">
+          Live Demo
+        </button>
+      </div>
+      <div class="xp-card">
+        <h2 style="font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif; font-size: 1rem;">Portfolio Website</h2>
+        <p style="font-size:0.8rem;line-height:1.7;">This very portfolio, built from scratch in a Windows XP/97 style for maximum nostalgia and usability. Features pixel-perfect UI, custom SVG icons, and a retro modal system.</p>
+        <div style="margin-bottom:0.7em;">
+          <span style="font-size:0.7rem;">Tech: HTML, CSS, JavaScript, SVG, Pixel Art</span>
+        </div>
+        <button class="xp-btn" onclick="window.open('https://github.com/Sumeet-162/portfolio', '_blank')" title="View Source Code">
+          <img src="assets/icons/view.svg" class="xp-icon" alt="View">
+          View Source Code
+        </button>
+        <button class="xp-btn" onclick="window.open('https://sumeet-162.github.io/portfolio/', '_blank')" title="Live Demo">
+          <img src="assets/icons/view.svg" class="xp-icon" alt="Live">
+          Live Demo
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subtle retro feature: pixelated hover effect for project buttons -->
+  <style>
+  .xp-btn:hover {
+    filter: contrast(1.2) brightness(1.1) drop-shadow(1px 1px 0 #808080);
+  }
+  .xp-btn[title]:hover:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: #ffffe1;
+    color: #222;
+    border: 1px solid #808080;
+    font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 #bfcbe7;
+    pointer-events: none;
+  }
+  .xp-btn { position: relative; }
+  </style>
+</body>
+</html> 

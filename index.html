@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumeet K | Portfolio</title>
+  <link rel="stylesheet" href="assets/css/xp97.css">
+</head>
+<body>
+  <!-- XP Taskbar/Navbar -->
+  <nav class="xp-navbar">
+    <button class="xp-start">
+      <img src="assets/icons/start.svg" class="xp-icon" alt="Start">
+      Start
+    </button>
+    <div class="xp-nav-divider"></div>
+    <a href="index.html" class="xp-nav-link">
+      <img src="assets/icons/home.svg" class="xp-icon" alt="Home">
+      Home
+    </a>
+    <a href="projects.html" class="xp-nav-link">
+      <img src="assets/icons/projects.svg" class="xp-icon" alt="Projects">
+      Projects
+    </a>
+    <a href="certificate.html" class="xp-nav-link">
+      <img src="assets/icons/certificate.svg" class="xp-icon" alt="Certifications">
+      Certifications
+    </a>
+    <a href="connect.html" class="xp-nav-link">
+      <img src="assets/icons/connect.svg" class="xp-icon" alt="Connect">
+      Connect
+    </a>
+  </nav>
+
+  <!-- Hero Window -->
+  <section class="xp-window" style="margin-top:64px;">
+    <div class="xp-titlebar">
+      <img src="assets/icons/user.svg" class="xp-icon" alt="User">
+      <span><u>W</u>elcome</span>
+    </div>
+    <div class="xp-content" style="text-align:left;">
+      <h1 style="font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif; font-size: 1.2rem; margin-top:0; margin-bottom:1.2em; letter-spacing:0;">Welcome to my profile<span class="pixel-caret">_</span></h1>
+      <p style="font-size:0.8rem;">Hi, I'm <b>Sumeet K</b> — a passionate developer and technology enthusiast. Explore my work, certifications, and get in touch!</p>
+    </div>
+  </section>
+
+  <!-- About Me Section (single, merged, only one) -->
+  <section class="xp-window" style="background: var(--win95-gray);">
+    <div class="xp-titlebar"><img src="assets/icons/user.svg" class="xp-icon" alt="About"> <span><u>A</u>bout Me</span></div>
+    <div class="xp-content" style="line-height:1.7;">
+      <pre style="font-family:'Press Start 2P',Tahoma,sans-serif;font-size:0.8rem;line-height:1.7;background:none;border:none;margin:0 0 1.2em 0;white-space:pre-wrap;">
+Sumeet K
+Bengaluru based Engineering student. I enjoy solving problems and making things pretty and easy to use. I can't stop learning new things—the more, the better!
+
+Location: Bengaluru, India
+Email: sumeet2703@gmail.com
+Ph: +91 8971555955
+LinkedIn: Sumeet K
+GitHub: Sumeet-162
+      </pre>
+      <button class="xp-btn" onclick="window.location.href='assets/resume.pdf';" download style="font-size:1rem;margin-top:1em;">
+        <img src="assets/icons/download.svg" class="xp-icon" alt="Download">
+        <b>Download Resume</b>
+      </button>
+    </div>
+  </section>
+
+  <!-- JS for Resume Download (ensures download attribute works everywhere) -->
+  <script>
+    document.querySelectorAll('.xp-btn[download]').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const link = document.createElement('a');
+        link.href = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+        link.download = '';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
+  </script>
+
+  <!-- Welcome Modal (Windows 95/XP Notepad Style) -->
+  <div id="welcomeModal" style="display:flex;align-items:center;justify-content:center;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.12);">
+    <div style="background:#c0c0c0;border:2px solid #808080;box-shadow:8px 8px 0 #808080;width:540px;max-width:99vw;min-height:220px;font-family:'Press Start 2P',Tahoma,sans-serif;display:flex;flex-direction:column;image-rendering:pixelated;">
+      <div style="background:#000080;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 8px;height:28px;font-size:0.9rem;font-family:'Press Start 2P',Tahoma,sans-serif;border-bottom:2px solid #808080;user-select:none;">
+        <span><img src="assets/icons/about.svg" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;image-rendering:pixelated;"> <u>U</u>ntitled - <u>N</u>otepad</span>
+        <button id="closeWelcomeModal" style="background:#c0c0c0;border:2px outset #fff;width:28px;height:22px;color:#222;font-family:'Press Start 2P',Tahoma,sans-serif;font-size:1.1rem;cursor:pointer;line-height:1;padding:0;margin-left:8px;">&#10005;</button>
+      </div>
+      <div style="background:#ececec;display:flex;align-items:center;height:24px;padding-left:8px;font-size:0.8rem;border-bottom:2px solid #808080;">
+        <span style="margin-right:18px;"><u>F</u>ile</span>
+        <span style="margin-right:18px;"><u>E</u>dit</span>
+        <span style="margin-right:18px;"><u>S</u>earch</span>
+        <span><u>H</u>elp</span>
+      </div>
+      <div style="flex:1;padding:18px 18px 12px 18px;font-size:0.8rem;background:#fff;overflow-x:auto;text-align:left;line-height:1.6;">
+        <pre style="margin:0;white-space:pre-wrap;word-break:break-word;font-family:'Press Start 2P',Tahoma,sans-serif;background:none;border:none;">
+<b>Welcome to Sumeet K's Portfolio!</b>
+
+This site is crafted in the spirit of Windows 95/XP.
+
+- Use the Start bar to navigate.
+- Explore projects, certifications, and more.
+- Download my resume or get in touch!
+
+Enjoy the nostalgia and pixel-perfect details.
+
+Press X or click outside to close this window.
+        </pre>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Welcome Modal logic (show only once per user)
+    console.log('Welcome modal script running');
+    const modal = document.getElementById('welcomeModal');
+    const closeBtn = document.getElementById('closeWelcomeModal');
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+      localStorage.setItem('welcomeModalShown', 'true');
+    }
+    closeBtn.onclick = closeModal;
+    window.addEventListener('keydown', function(e) {
+      if (modal.style.display !== 'none' && (e.key === 'Escape' || e.key.toLowerCase() === 'x')) closeModal();
+    });
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+    if (localStorage.getItem('welcomeModalShown')) {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    } else {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  </script>
+
+  <!-- Education Section -->
+  <section class="xp-window">
+    <div class="xp-titlebar"><img src="assets/icons/about.svg" class="xp-icon" alt="Education"> <span><u>E</u>ducation</span></div>
+    <div class="xp-content">
+      <ul style="padding-left:1.2em;">
+        <li><b>Cambridge Institute of Technology, Bengaluru</b> (2021–2025)<br>Bachelor's in Computer Science and Engineering. Strong foundation in programming, algorithms, and system design. Practical experience in Java, React, Python, and databases.</li>
+        <li style="margin-top:1em;"><b>St Aloysius PU College, Mangaluru</b> (2019–2021)<br>Associate in Science. Coursework in mathematics, physics, and computing. Developed analytical and problem-solving skills.</li>
+        <li style="margin-top:1em;"><b>Alva's English Medium High School</b> (2017–2018)<br>Focus on science and mathematics. Built analytical thinking and interest in technology.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="xp-window">
+    <div class="xp-titlebar"><img src="assets/icons/about.svg" class="xp-icon" alt="Experience"> <span><u>E</u>xperience</span></div>
+    <div class="xp-content">
+      <ul style="padding-left:1.2em;">
+        <li><b>Cognizant Technology Solutions, CDPI</b> (Mar 2025–Present, Chennai)<br>Developed a full-stack e-commerce website using ASP.NET Core 8.0, Entity Framework Core 8.0, and SQL. Built scalable backend services, implemented authentication, and designed RESTful APIs in a cross-functional team.</li>
+        <li style="margin-top:1em;"><b>Java Full Stack Developer Trainee, Wipro Limited</b> (Jan 2024–Sept 2024, Bengaluru)<br>Completed Java Full Stack training. Ranked in top 10% of cohort with 90% in coding assessments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ / Dropdown Section -->
+  <section class="xp-window">
+    <div class="xp-titlebar"><img src="assets/icons/about.svg" class="xp-icon" alt="FAQ"> <span><u>F</u>AQ</span></div>
+    <div class="xp-content">
+      <div class="faq-item" style="margin-bottom:1em;">
+        <button class="xp-btn faq-toggle" style="font-size:0.8rem;display:flex;align-items:center;gap:0.5em;">
+          <span class="faq-plus" style="font-size:1.2em;display:inline-block;transform:translateY(-1px);">+</span>
+          What certification does Sumeet hold to demonstrate expertise in Cloud Computing and Cyber Security?
+        </button>
+        <div class="faq-content" style="display:none;margin-left:2em;margin-top:0.5em;">
+          · Google Cybersecurity Professional Certificate<br>
+          · Google Cloud Fundamentals: Core Infrastructure<br>
+          · Exploring Data Transformation with Google Cloud<br>
+          · Microsoft Certified: Azure AI Fundamentals<br>
+          · Google AI Essentials
+        </div>
+      </div>
+      <div class="faq-item" style="margin-bottom:1em;">
+        <button class="xp-btn faq-toggle" style="font-size:0.8rem;display:flex;align-items:center;gap:0.5em;">
+          <span class="faq-plus" style="font-size:1.2em;display:inline-block;transform:translateY(-1px);">+</span>
+          What are Sumeet's goals for their career in engineering?
+        </button>
+        <div class="faq-content" style="display:none;margin-left:2em;margin-top:0.5em;">
+          Sumeet aims to leverage their expertise in computer science to develop innovative solutions that address real-world problems. They aspire to contribute to impactful projects, continually enhance their technical and non-technical skills, and remain at the forefront of technological advancements. Sumeet is committed to lifelong learning and seeks to achieve excellence in the engineering field.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="xp-btn faq-toggle" style="font-size:0.8rem;display:flex;align-items:center;gap:0.5em;">
+          <span class="faq-plus" style="font-size:1.2em;display:inline-block;transform:translateY(-1px);">+</span>
+          What is Sumeet K's LeetCode profile, and how can it demonstrate their problem-solving skills?
+        </button>
+        <div class="faq-content" style="display:none;margin-left:2em;margin-top:0.5em;">
+          Sumeet K's LeetCode profile can be found at <a href="https://leetcode.com/SumeetK162/" target="_blank">LeetCode Profile</a>. It showcases their problem-solving skills through various coding challenges and solutions.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  // FAQ dropdown logic
+  Array.from(document.querySelectorAll('.faq-toggle')).forEach(btn => {
+    btn.addEventListener('click', function() {
+      const content = this.parentElement.querySelector('.faq-content');
+      const plus = this.querySelector('.faq-plus');
+      if (content.style.display === 'none' || !content.style.display) {
+        content.style.display = 'block';
+        plus.textContent = '-';
+      } else {
+        content.style.display = 'none';
+        plus.textContent = '+';
+      }
+    });
+  });
+  </script>
+
+  <style>
+    /* Responsive Navbar Fix */
+    @media (max-width: 700px) {
+      .xp-navbar {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 0.5em 0.5em;
+        min-width: 0;
+      }
+      .xp-navbar .xp-nav-link, .xp-navbar .xp-start {
+        width: 100%;
+        margin: 0 0 6px 0;
+        justify-content: flex-start;
+      }
+      .xp-navbar .xp-nav-divider {
+        display: none;
+      }
+      .xp-window {
+        margin-top: 70px !important;
+      }
+    }
+    /* Reduce text size for normal content and improve line spacing */
+    .xp-content, .xp-card, .xp-window p, .xp-window li, .xp-window ul {
+      font-size: 0.8rem !important;
+      line-height: 1.7 !important;
+    }
+    body, html { cursor: url('assets/icons/cursor.svg'), auto; }
+  </style>
+
+  <!-- Pixelated blinking caret for hero -->
+  <style>
+  .pixel-caret {
+    display:inline-block;
+    width:1ch;
+    animation: blink 1s steps(1) infinite;
+    font-family: inherit;
+  }
+  @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+  </style>
+
+  <!-- Retro tooltip for Start button -->
+  <style>
+  .xp-start[title]:hover:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: #ffffe1;
+    color: #222;
+    border: 1px solid #808080;
+    font-family: 'Press Start 2P', Tahoma, Segoe UI, Verdana, Arial, sans-serif;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 #bfcbe7;
+    pointer-events: none;
+  }
+  .xp-start { position: relative; }
+  </style>
+  <script>
+  document.querySelector('.xp-start').setAttribute('title', 'Click to open Start menu');
+  </script>
+</body>
+</html>
